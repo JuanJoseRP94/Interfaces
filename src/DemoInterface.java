@@ -1,4 +1,5 @@
 import java.time.LocalDate;
+import java.time.LocalDateTime;
 import java.time.LocalTime;
 import java.time.format.DateTimeFormatter;
 
@@ -39,5 +40,18 @@ public class DemoInterface {
         LocalTime objHora = LocalTime.now();
         System.out.println("objHora = " + objHora);
 
+        // Formato hora hh:mm:ss
+        DateTimeFormatter fmtHora = DateTimeFormatter.ofPattern("HH:mm:ss");
+        System.out.println("objHora.format(fmtHora) = " + objHora.format(fmtHora));
+        
+        // Fecha y hora al mismo tiempo
+        LocalDateTime objFechaHora = LocalDateTime.now();
+        System.out.println("objFechaHora = " + objFechaHora);
+        DateTimeFormatter fmtFechaHora = DateTimeFormatter.ofPattern("dd 'de' MMMM 'de' yyyy HH:mm:ss");
+        System.out.println("objFechaHora.format(fmtFechaHora) = " + objFechaHora.format(fmtFechaHora));
+
+        // Establecer Fecha y Hora
+        objFechaHora = LocalDateTime.of(2145, 5, 22, 12, 1, 2);
+        System.out.println("objFechaHora.format(fmtFechaHora) = " + objFechaHora.format(fmtFechaHora));
     }
 }
